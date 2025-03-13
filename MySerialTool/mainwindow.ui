@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1014</width>
+    <height>788</height>
+   </rect>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    font: 16pt &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+}
+
+QGroupBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 20px;
+    padding: -10px 5px 0px 5px;
+}
+
+QMainWindow {
+    background-color: #151a1e;
+}
+
+QPlainTextEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+
+    font: 10pt &quot;Microsoft YaHei&quot;;
+    background-color: #222b2e;
+    color: #d3dae3;
+}
+
+QComboBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+
+    color: #d3dae3;
+    background-color: #222b2e;
+}
+
+QComboBox QAbstractItemView {
+	border: 1px solid #4fa08b;
+
+    outline: 0px solid gray;
+    background-color: #222b2e;
+    selection-background-color: #4fa08b;
+}
+
+QPushButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    border-radius: 5px;
+
+    color: #d3dae3;
+    padding: 2px;
+    background-color: #151a1e;
+}
+
+QPushButton:hover {
+    border-color: #050a0e;
+    background-color: #1c1f1f;
+}
+
+QPushButton:pressed {
+    border-color: #050a0e;
+    background-color: #2c2f2f;
+}
+
+QPushButton:disabled {
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+    border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+
+    color: #808086;
+    background-color: rgb(142, 142, 142);
+}
+
+QCheckBox {
+    padding: 2px;
+}
+
+QCheckBox:disabled {
+    color: #808086;
+}
+
+QCheckBox::indicator:checked {
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4fa08b;
+
+    background-color: #4fa08b;
+}
+
+QCheckBox::indicator:unchecked {
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4fa08b;
+
+    background-color: #ffffff;
+}
+
+QLineEdit, QSpinBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+
+    background-color: #222b2e;
+    color: #d3dae3;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>串口参数设置</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>端口名称</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="portName">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>波特率</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="baudRate">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>数据位</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="dataBits">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>奇偶校验</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="parity">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>停止位</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="stopBits">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>流控制</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QComboBox" name="flowControl">
+             <property name="minimumSize">
+              <size>
+               <width>211</width>
+               <height>51</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>接收</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="recvTextEdit">
+          <property name="minimumSize">
+           <size>
+            <width>481</width>
+            <height>381</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>发送</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="sendTextEdit"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="openButton">
+        <property name="minimumSize">
+         <size>
+          <width>141</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>打开串口</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_8">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="text">
+         <string>定时发送</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="timelineSpinBox">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>ms/次</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_10">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sendButton">
+        <property name="minimumSize">
+         <size>
+          <width>141</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>发送</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

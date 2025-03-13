@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>853</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 全局样式 */
+QWidget {
+    font: 16pt &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+}
+
+QLabel {
+    font: 14pt &quot;Microsoft YaHei&quot;;
+    color: #4fa08b;
+}
+
+QMainWindow {
+    background-color: #151a1e;
+}
+
+/* 输入框样式 */
+QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    background-color: #222b2e;
+    color: #d3dae3;
+}
+
+/* 按钮样式 */
+QPushButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    border-radius: 5px;
+    color: #d3dae3;
+    padding: 2px;
+    background-color: #151a1e;
+}
+
+QPushButton:hover {
+    border-color: #050a0e;
+    background-color: #1c1f1f;
+}
+
+QPushButton:pressed {
+    border-color: #050a0e;
+    background-color: #2c2f2f;
+}
+
+QPushButton:disabled {
+    color: #808086;
+    background-color: rgb(142, 142, 142);
+}
+
+/* 表格样式 */
+QTableWidget {
+    font-size: 16px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+    background-color: #222b2e;
+}
+
+QHeaderView::section {
+    font-size: 14px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+    background: #222b2e;
+}
+
+QTableWidget::item::selected {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+/* 下拉框样式 */
+QComboBox {
+    color: #d3dae3;
+    background-color: #222b2e;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #4fa08b;
+    background-color: #222b2e;
+    selection-background-color: #4fa08b;
+}
+
+/* 复选框样式 */
+QCheckBox::indicator:checked {
+    border: 1px solid #4fa08b;
+    background-color: #4fa08b;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 1px solid #4fa08b;
+    background-color: #ffffff;
+}
+
+/* 单选框样式 */
+QRadioButton::indicator:checked {
+    border: 1px solid #4fa08b;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.4, fx:0.5, fy:0.5, stop:0 #4fa08b, stop:1 #1e282c);
+}
+
+QRadioButton::indicator:unchecked {
+    border: 1px solid #4fa08b;
+    background-color: transparent;
+}
+
+/* 进度条样式 */
+QProgressBar {
+    text-align: center;
+    color: #d3dae3;
+    border-radius: 10px;
+    background-color: #52595d;
+}
+
+QProgressBar::chunk {
+    background-color: #214037;
+    border-radius: 10px;
+}
+
+/* 菜单栏样式 */
+QMenuBar {
+    background-color: #151a1e;
+}
+
+QMenuBar::item {
+    color: #d3dae3;
+    background-color: #151a1e;
+}
+
+QMenuBar::item:selected {
+    background-color: #252a2e;
+    color: #ffffff;
+}
+
+QMenu {
+    background-color: #151a1e;
+}
+
+QMenu::item:selected {
+    background-color: #252a2e;
+    color: #ffffff;
+}
+
+QMenu::item {
+    color: #d3dae3;
+    background-color: #151a1e;
+}
+
+/* 标签页样式 */
+QTabWidget::pane {
+    border-color: #050a0e;
+    background-color: #1e282c;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+QTabBar::tab {
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-left-width: 1px;
+    border-top-color: #050a0e;
+    border-left-color: #050a0e;
+    border-bottom-color: #050a0e;
+    color: #d3dae3;
+    padding: 3px;
+    margin-left: 0px;
+    background-color: #151a1e;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    border-right-color: transparent;
+    color: #ffffff;
+    background-color: #1e282c;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+    font: 16pt &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+}
+
+QLabel {
+    font: 14pt &quot;Microsoft YaHei&quot;;
+    color: #4fa08b;
+}
+
+QGroupBox {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 20px;
+    padding: -10px 5px 0px 5px;
+}
+
+QMainWindow {
+    background-color: #151a1e;
+}
+
+QCalendar {
+    background-color: #151a1e;
+}
+
+QTextEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    background-color: #222b2e;
+    color: #d3dae3;
+}
+
+QPlainTextEdit {
+    font: 10pt &quot;Microsoft YaHei&quot;;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    background-color: #222b2e;
+    color: #d3dae3;
+}
+
+
+QPushButton {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+
+    border-radius: 5px;
+    color: #d3dae3;
+    padding: 2px;
+    background-color: #151a1e;
+}
+
+QPushButton::default {
+    border-style: solid;
+    border-color: #4fa08b;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 2px;
+    background-color: #151a1e;
+    ;
+}
+
+QPushButton:hover {
+    border-style: solid;
+    border-color: #050a0e;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #d3dae3;
+    padding: 2px;
+    background-color: #1c1f1f;
+}
+
+QPushButton:pressed {
+    border-style: solid;
+    border-color: #050a0e;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #d3dae3;
+    padding: 2px;
+    background-color: #2c2f2f;
+}
+
+QPushButton:disabled {
+    border-style: solid;
+    border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+    border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+    border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+    border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+    border-width: 1px;
+    border-radius: 5px;
+    color: #808086;
+    padding: 2px;
+    background-color: rgb(142, 142, 142);
+}
+
+QLineEdit {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+    background-color: #222b2e;
+    color: #d3dae3;
+}
+
+QStatusBar {
+    color: #027f7f;
+}
+
+QComboBox {
+    color: #d3dae3;
+    background-color: #222b2e;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+    outline: 0px solid gray;
+    /* 选定项的虚框 */
+    border: 1px solid #4fa08b;
+    /* 整个下拉窗体的边框 */
+    background-color: #222b2e;
+    /* 整个下拉窗体的背景色 */
+    selection-background-color: #4fa08b;
+    /* 整个下拉窗体被选中项的背景色 */
+}
+
+QComboBox:disabled {
+    background-color: gray;
+    /* 整个下拉窗体的背景色 */
+}
+
+/*表格头部*/
+QHeaderView {
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+QHeaderView::section {
+    font-size: 14px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    color: #FFFFFF;
+    background: #222b2e;
+}
+
+QTableWidget::item::selected {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4fa08b;
+}
+
+QTableWidget {
+    font-size: 16px;
+    font-family: &quot;Microsoft YaHei&quot;;
+    color: #ffffff;
+    background-color: #222b2e;
+}</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_14">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>通讯方式</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QComboBox" name="mType">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>IP或COM</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="mIP_COM">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>端口</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="m_Port">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>191</width>
+              <height>181</height>
+             </size>
+            </property>
+            <widget class="QPushButton" name="mConBtn">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>80</y>
+               <width>141</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>141</width>
+               <height>51</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>连接</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>0</y>
+               <width>131</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Master</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableMaster">
+          <property name="minimumSize">
+           <size>
+            <width>391</width>
+            <height>421</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>18</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <widget class="QWidget" name="widget_3" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>75</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_9">
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>从站地址</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="mAddr">
+               <property name="minimumSize">
+                <size>
+                 <width>101</width>
+                 <height>41</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QPushButton" name="m03Btn">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>51</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>03读取保持寄存器</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m06Btn">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>51</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>06写单个保持寄存器</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m16Btn">
+            <property name="minimumSize">
+             <size>
+              <width>300</width>
+              <height>51</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>16写入多个保持寄存器</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_11">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>通讯方式</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QComboBox" name="sType">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>IP或COM</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="sIP_COM">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>端口</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="s_Port">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>41</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_2" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>191</width>
+              <height>181</height>
+             </size>
+            </property>
+            <widget class="QPushButton" name="sConBtn">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>141</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>141</width>
+               <height>51</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>连接</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_8">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>121</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Slaver</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableSlave">
+          <property name="minimumSize">
+           <size>
+            <width>391</width>
+            <height>421</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>从站地址</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="sAddr">
+            <property name="minimumSize">
+             <size>
+              <width>121</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>表类型</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QComboBox" name="sTable">
+            <property name="minimumSize">
+             <size>
+              <width>221</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
